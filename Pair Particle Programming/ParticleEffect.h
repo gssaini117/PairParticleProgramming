@@ -20,6 +20,10 @@ public:
 
 	~ParticleEffect();
 
+	void Update(const sf::Time& time);
+
+	void Render(sf::RenderWindow& canvas);
+
 };
 
 #endif

@@ -9,25 +9,20 @@ class Particle
 private:
 
 	sf::Shape* shape;
-
-	sf::Vector2f* velocity;
-
+	sf::Vector2f position;
+	sf::Vector2f velocity;
+	sf::Color color;
 	float lifespan;
+	float life;
 
 public:
 
-	Particle(int x, int y);
-
+	Particle(sf::Vector2f& origin, sf::Vector2f& vel);
 	~Particle();
-
 	sf::Vector2f GetPosition() const;
-
 	bool IsAlive() const;
-
-	void Update(sf::Time& time);
-
+	void Update(const sf::Time& time);
 	void Render(sf::RenderWindow& canvas);
-
 };
 
 #endif
