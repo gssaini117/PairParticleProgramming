@@ -134,7 +134,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="ParticleEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />

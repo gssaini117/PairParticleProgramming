@@ -8,7 +8,7 @@ class ParticleEffect
 
 private:
 
-	sf::Vector2u origin;
+	sf::Vector2f origin;
 
 	Particle* particles;
 
@@ -16,11 +16,13 @@ private:
 
 public:
 
-	ParticleEffect(sf::Vector2u& origin, int count);
+	ParticleEffect(const sf::Vector2f& origin, int count);
 
 	~ParticleEffect();
 
-	void Update(const sf::Time& time);
+	bool IsAlive() const;
+
+	void Update(const sf::Time& delta);
 
 	void Render(sf::RenderWindow& canvas);
 

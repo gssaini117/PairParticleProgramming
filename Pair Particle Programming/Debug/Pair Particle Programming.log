@@ -1,0 +1,24 @@
+﻿  Client.cpp
+  Game.cpp
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Game.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Game.cpp(37,11): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Game.cpp(38,11): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Game.cpp(47,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Game.cpp(57,20): warning C4018: '<': signed/unsigned mismatch
+  Particle.cpp
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Particle.cpp(20,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Particle.cpp(23,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Particle.cpp(44,28): warning C4244: '=': conversion from 'float' to 'sf::Uint8', possible loss of data
+  ParticleEffect.cpp
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\ParticleEffect.cpp(16,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\ParticleEffect.cpp(19,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Pair Particle Programming.vcxproj -> C:\Users\gurki\OneDrive\Documents\GAME 230\PairParticleProgramming\Pair Particle Programming\Debug\Pair Particle Programming.exe
