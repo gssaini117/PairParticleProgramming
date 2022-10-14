@@ -1,3 +1,8 @@
+/*
+* Programmed by Sydney Fonderie and Gurkirat Saini
+* GAME-230
+*/
+
 #include "Game.h"
 
 int main()

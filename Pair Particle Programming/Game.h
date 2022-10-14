@@ -1,3 +1,8 @@
+/*
+* Programmed by Sydney Fonderie and Gurkirat Saini
+* GAME-230
+*/
+
 #ifndef GAME_H
 #define GAME_H
 

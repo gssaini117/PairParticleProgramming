@@ -1,3 +1,8 @@
+/*
+* Programmed by Sydney Fonderie and Gurkirat Saini
+* GAME-230
+*/
+
 #ifndef RANDOM_H
 #define RANDOM_H
 

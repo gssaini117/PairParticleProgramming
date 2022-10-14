@@ -1,3 +1,8 @@
+/*
+* Programmed by Sydney Fonderie and Gurkirat Saini
+* GAME-230
+*/
+
 #ifndef PARTICLE_EFFECT_H
 #define PARTICLE_EFFECT_H
 

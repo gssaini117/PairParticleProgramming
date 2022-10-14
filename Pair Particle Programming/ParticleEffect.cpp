@@ -1,3 +1,8 @@
+/*
+* Programmed by Sydney Fonderie and Gurkirat Saini
+* GAME-230
+*/
+
 #include "ParticleEffect.h"
 
 sf::Color ParticleEffect::PickColor()
