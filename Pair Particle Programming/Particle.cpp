@@ -1,51 +1,76 @@
 #include "Particle.h"
+#include <iostream>
 
-Particle::Particle() {
-	shape = sf::CircleShape(0);
-	position = sf::Vector2f(0, 0);
-	velocity = sf::Vector2f(0, 0);
-	color = sf::Color::Black;
-	lifespan = 0;
-	life = 0;
-	valid = false;
+Particle::Particle()
+{
+	this->shape = nullptr;
+	this->position = sf::Vector2f(0, 0);
+	this->velocity = sf::Vector2f(0, 0);
+	this->color = sf::Color::Black;
+	this->lifespan = 0;
+	this->life = 0;
+
+	this->valid = false;
 }
 
-// Destructor
-Particle::~Particle() {
-	
+Particle::~Particle()
+{
+	if (shape) delete shape;
 }
 
-void Particle::Initialize(const sf::Vector2f& origin, const sf::Vector2f& vel) {
-	shape = sf::CircleShape(8);
-	position = origin;
-	srand(time(NULL));
-	velocity = vel;
-	color = sf::Color(rand() % 255, rand() % 255, rand() % 255);
-	lifespan = rand() % 3 + 2;
-	life = lifespan;
-	valid = true;
+void Particle::Generate(const sf::Vector2f& position, const sf::Vector2f& velocity, const sf::Color& color)
+{
+	this->position = position;
+	this->velocity = velocity;
+	this->color = color;
+
+	float xSize = (float)Random::Range(SCALE_MIN, SCALE_MAX);
+	float ySize = (float)Random::Range(SCALE_MIN, SCALE_MAX);
+
+	this->shape = new sf::RectangleShape(sf::Vector2f(xSize, ySize));
+
+	this->lifespan = Random::Range(LIFE_MIN, LIFE_MAX);
+	this->life = 0;
+
+	this->valid = true;
 }
 
-// Returns the Position of the Particle based on its Velocity
-sf::Vector2f Particle::GetPosition() const {
-	return position;
+sf::Vector2f Particle::GetPosition() const
+{
+	return position + (velocity * life);
 }
 
-// Returns whether the Particle has lived out its Lifespan or not
-bool Particle::IsAlive() const {
-	return life > 0;
+sf::Color Particle::GetColor() const
+{
+	return color - sf::Color(0, 0, 0, (unsigned int)(life / lifespan * 255));
 }
 
-// Updates Particle based on Time
-void Particle::Update(const sf::Time& time) {
+bool Particle::IsAlive() const
+{
+	return life < lifespan;
+}
+
+void Particle::Update(const sf::Time& delta)
+{
+	// Ignore if invalid.
 	if (!valid) return;
-	position += velocity;
-	shape.setPosition(position);
-	life -= time.asSeconds();
-	color.a = life / lifespan * 255;
+
+	// Tick the particle.
+	life += delta.asSeconds();
+
+	// Clamp the life to avoid overflows.
+	if (life > lifespan) life = lifespan;
+
+	// Actually update the particle.
+	shape->setPosition(GetPosition());
+	shape->setFillColor(GetColor());
 }
 
-// Renders Particle to the window
-void Particle::Render(sf::RenderWindow& canvas) {
-	canvas.draw(shape);
+void Particle::Render(sf::RenderWindow& canvas)
+{
+	// Ignore if invalid.
+	if (!valid) return;
+
+	// Draw the particle if it is alive.
+	if (IsAlive()) canvas.draw(*shape);
 }

@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <list>
+
 #include "ParticleEffect.h"
 
 class Game
@@ -8,8 +10,9 @@ class Game
 
 private:
 
-	// Manages the current set of Particle Effects
-	std::vector<ParticleEffect> effects;
+	const int EFFECT_BUFFER = 32;
+
+	ParticleEffect** effects;
 
 public:
 
